@@ -1,10 +1,10 @@
 {
   "development": {
-    "apiUrl": "https://blog.qbfactory.show",
-    "contentApiKey": "4d33517a0bd826204c68608f22"
+    "apiUrl": "https://admin.qbfactory.show",
+    "contentApiKey": "fe89c55fcccf9b66b586b5fe6f"
   },
   "production": {
-    "apiUrl": "https://blog.qbfactory.show",
-    "contentApiKey": "4d33517a0bd826204c68608f22"
+    "apiUrl": "https://admin.qbfactory.show",
+    "contentApiKey": "fe89c55fcccf9b66b586b5fe6f"
   }
 }
