@@ -156,6 +156,7 @@ table {
 }
 img {
     max-width: 100%;
+    height: auto;
 }
 html {
     box-sizing: border-box;
@@ -765,7 +766,7 @@ h6 {
 /* Index
 /* ---------------------------------------------------------- */
 
-.post-feed {
+/* .post-feed {
     display: grid;
     justify-content: space-between;
     grid-gap: 30px;
@@ -781,11 +782,19 @@ h6 {
     .post-feed {
         grid-template-columns: 1fr;
     }
-}
+} */
 
 .post-card {
+    display: grid;
+    justify-content: space-between;
+    grid-gap: 30px;
+    grid-template-columns: 3fr 2fr;
     color: inherit;
     text-decoration: none;
+    padding-bottom: 30px;
+}
+.post-card:nth-child(even) {
+    direction: rtl;
 }
 
 .post-card:hover {
@@ -793,12 +802,25 @@ h6 {
 }
 
 .post-card-tags {
-    margin: 0 0 5px 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 10px;
+    color: var(--color-secondary-text);
     font-size: 1.4rem;
-    line-height: 1.15em;
-    color: var(--color-secondary);
+    font-weight: 600;
+    letter-spacing: -.005em;
+    line-height: 1;
 }
 
+.post-card-featured {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    padding-left: 18px;
+    color: var(--ghost-accent-color);
+}
 
 .post-card-title {
     margin: 0 0 10px 0;
@@ -810,12 +832,29 @@ h6 {
     line-height: 1.55em;
 }
 
+.post-card-image-link {
+    
+}
+
 .post-card-image {
     margin: 0 0 10px 0;
-    width: auto;
-    height: 200px;
+    min-width: 100%;
+    height: auto;
     background: var(--color-secondary) no-repeat center center;
     background-size: cover;
+}
+
+.post-card-content {
+    direction: ltr;
+}
+.post-card-content-link {
+    position: relative;
+    display: block;
+    color: var(--color-darkgrey);
+}
+
+.post-card-content-link:hover {
+    text-decoration: none;
 }
 
 .post-card-footer {
@@ -834,11 +873,13 @@ h6 {
 .post-card-footer-right {
     display: flex;
     flex-direction: column;
+    align-items: end;
 }
 
 .post-card-avatar {
-    width: 30px;
-    height: 30px;
+    width: 100%;
+    max-width: 30px;
+    height: auto;
     margin: 0 7px 0 0;
     border-radius: 100%;
     display: flex;
