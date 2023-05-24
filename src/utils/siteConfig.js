@@ -1,7 +1,7 @@
 module.exports = {
     siteUrl: `https://blog.qbfactory.show`, // Site domain. Do not include a trailing slash!
 
-    postsPerPage: 12, // Number of posts shown on paginated pages (changes this requires sometimes to delete the cache)
+    postsPerPage: 6, // Number of posts shown on paginated pages (changes this requires sometimes to delete the cache)
 
     siteTitleMeta: `Quarterback Factory Show Community and Blog`, // This allows an alternative site title for meta data for pages.
     siteDescriptionMeta: `Sports talk for the Philadelphia region from a handful of die hard Philadelphians.`, // This allows an alternative site description for meta data for pages.
