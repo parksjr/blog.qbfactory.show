@@ -792,6 +792,11 @@ h6 {
     text-decoration: none;
     padding-bottom: 30px;
 }
+@media (max-width: 680px) {
+    .post-card {
+        grid-template-columns: 1fr;
+    }
+}
 .post-card:nth-child(even) {
     direction: rtl;
 }
@@ -801,9 +806,7 @@ h6 {
 }
 
 .post-card-tags {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+    display: inherit;
     margin: 0 0 10px;
     color: var(--color-secondary-text);
     font-size: 1.4rem;
@@ -817,7 +820,6 @@ h6 {
     display: flex;
     align-items: center;
     gap: 3px;
-    padding-left: 18px;
     color: var(--ghost-accent-color);
 }
 
