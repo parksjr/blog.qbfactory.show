@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet'
 
 import { Layout } from '../components/common'
 import { MetaData } from '../components/common/meta'
+import { readingTime as readingTimeHelper } from '@tryghost/helpers'
 
 /**
 * Single post view (/:slug)
@@ -14,6 +15,8 @@ import { MetaData } from '../components/common/meta'
 */
 const Post = ({ data, location }) => {
     const post = data.ghostPost
+    const readingTime = readingTimeHelper(post)
+    console.log('🚀 ~ file: post.js:17 ~ Post ~ post:', post)
 
     return (
         <>
@@ -28,12 +31,52 @@ const Post = ({ data, location }) => {
             <Layout>
                 <div className="container">
                     <article className="content">
+                        <h1 className="content-title">{post.title}</h1>
+
+                        {post.custom_excerpt ?
+                            <p className="article-excerpt">{post.custom_excerpt}</p> : null}
+
                         { post.feature_image ?
                             <figure className="post-feature-image">
                                 <img src={ post.feature_image } alt={ post.title } />
                             </figure> : null }
                         <section className="post-full-content">
-                            <h1 className="content-title">{post.title}</h1>
+
+                            <div className="article-byline">
+                                <section className="article-byline-content">
+
+                                    <ul className="author-list">
+                                        {post.authors?.map?.((author) => (
+                                            <li className="author-list-item" key={author.slug}>
+                                                {/* {{#if profile_image}} */}
+                                                {author.profile_image
+                                                    ? <a href={author.url} className="author-avatar">
+                                                        <img className="author-profile-image" src={author.profile_image} alt={author.name} />
+                                                    </a>
+                                                    :  <a href={author.url} className="author-avatar author-profile-image">
+                                                        <img className="author-profile-image" src="/images/icons/avatar.svg" />
+                                                    </a>
+                                                }
+                                            </li>
+                                        ))}
+                                    </ul>
+
+                                    <div className="article-byline-meta">
+                                        <h4 className="author-name">
+                                            {post.authors?.map?.(({ name = 'Not Sure' }, nameIdx) =>
+                                                post.authors?.length && nameIdx < post.authors.length - 1
+                                                    ? `${name}, `
+                                                    : name
+                                            )}
+                                        </h4>
+                                        <div className="byline-meta-content">
+                                            <time className="byline-meta-date" dateTime={post.published_at}>{post.published_at_pretty}</time>
+                                            <span className="byline-reading-time"><span className="bull">&bull;</span> {readingTime}</span>
+                                        </div>
+                                    </div>
+
+                                </section>
+                            </div>
 
                             {/* The main post content */ }
                             <section
