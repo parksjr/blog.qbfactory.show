@@ -17,7 +17,7 @@ const Post = ({ data, location }) => {
     const post = data.ghostPost
     const readingTime = readingTimeHelper(post)
 
-    const encodedUrl = encodeURIComponent(post.url.replace('admin', 'ghost'))
+    const encodedUrl = encodeURIComponent(post.url.replace('admin', 'blog'))
     const encodedTextForShare = encodeURIComponent(post.custom_excerpt ? post.custom_excerpt : post.title)
     const encodedTags = String((post.tags || []).map((tag) => tag.name).concat(['qbfs', 'phillysports']))
 
