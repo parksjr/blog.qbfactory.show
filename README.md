@@ -1,4 +1,8 @@
-# Gatsby Starter Ghost
+# Quarterback Factory Show
+
+Source code for QBFS Philly Sports Blog, serving true perspectives of your favorite Philly teams from a handful of die-hard fans. This website uses [Ghost](https://ghost.org) & [Gatsby](https://gatsbyjs.org) to deliver lightning fast content. Read on below to spin up your own.
+
+## Original README
 
 A starter template to build lightning fast websites with [Ghost](https://ghost.org) & [Gatsby](https://gatsbyjs.org)
 
